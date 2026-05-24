@@ -1,0 +1,9 @@
+# Ignore everything by default
+*
+
+# But keep this .gitignore file and main.cpp
+!.gitignore
+!main.cpp
+
+# Allow Git to recurse into directories when needed
+!*/
