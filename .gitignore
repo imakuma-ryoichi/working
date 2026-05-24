@@ -7,3 +7,7 @@
 
 # Allow Git to recurse into directories when needed
 !*/
+
+# Allow this nested Markdown file
+!discreteMathematics/
+!discreteMathematics/reportTipMemo.md
