@@ -1,5 +1,6 @@
 # Ignore everything by default
 *
+!*.md
 
 # But keep this .gitignore file and main.cpp
 !.gitignore
@@ -11,6 +12,4 @@
 # Allow this nested Markdown file
 !discreteMathematics/
 !discreteMathematics/reportTipMemo.md
-!informationLearning/communicationMethod/I2C-Communication.md
-!informationLearning/controlMethod/PID-Control.md
-!informationLearning/ADC.md
+
