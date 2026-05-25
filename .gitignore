@@ -11,3 +11,6 @@
 # Allow this nested Markdown file
 !discreteMathematics/
 !discreteMathematics/reportTipMemo.md
+!informationLearning/communicationMethod/I2C-Communication.md
+!informationLearning/controlMethod/PID-Control.md
+!informationLearning/ADC.md
