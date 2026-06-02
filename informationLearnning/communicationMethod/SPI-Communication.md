@@ -32,9 +32,18 @@ I2Cより圧倒的に速い　(数Mpps~数十Mpps)
 通信したい子機を指名するための線
 いったん通信したいデバイスの電圧を落とすことで判別している
 
+## arduino配線
+
+- D10: SSLB0 - CS
+- D11: COPIB - SI
+- D12: CIPOB - SO
+- D13: RSPCKB - SCK
+
+
 ### 補足
 
 - SS(Slave select) →　CS
 - SS → (PCS Peripheral Chip Select)
 - MOSI (Master Out Slave In) 
 - MISO (Master In Slave Out) 
+
