@@ -1,7 +1,6 @@
 AI 出力
 
-# Create markdown content
-md_content = """# C++17からC++26現在までに知っておくべきモダンC++知識まとめ
+# C++17からC++26現在までに知っておくべきモダンC++知識まとめ
 
 C++17から現在までに、**C++20** と **C++23** という2つの大規模なアップデートがありました。これにより、日常的なコード（出力、ループ、ソートなど）が劇的にスマートに書けるようになっています。本書の内容（C++17）を土台としつつ、最新の書き方に脳内アップデートしましょう！
 
@@ -12,19 +11,17 @@ C++17から現在までに、**C++20** と **C++23** という2つの大規模�
 C++17までは `std::cout << ...` を連打して出力していましたが、現代はPythonなどのように直感的なフォーマット指定で1行で書けるようになりました。
 
 * **C++17までの書き方:**
-    ```
-```text?code_stdout&code_event_index=2
-Generated Markdown: Modern_CPP_Guide_2026.md
-
 ```cpp
     std::cout << "一の位の数が" << j << ": " << num << std::endl;
     ```
+
 * **現代の書き方 (C++23):**
-    ```cpp
+```cpp
     #include <print>
 
     std::println("一の位の数が{}: {}", j, num);
     ```
+
 * **メリット:** `<<` や `std::endl` が不要になり、可読性が向上。さらに `std::cout` よりも内部動作が非常に高速です。
 
 ---
@@ -34,16 +31,17 @@ Generated Markdown: Modern_CPP_Guide_2026.md
 コンテナ（`vector`など）全体をソートしたり操作するときに、毎回最初と最後（`v.begin(), v.end()`）を呪文のように書く必要がなくなりました。
 
 * **C++17までの書き方:**
-    ```cpp
+```cpp
     std::sort(v.begin(), v.end());
     ```
+
 * **現代の書き方 (C++20):**
-    ```cpp
+```cpp
     #include <algorithm>
-    // ※ ranges版のsortを使用
 
     std::ranges::sort(v);
     ```
+
 * **メリット:** コンテナ名を渡すだけで「丸ごと処理」してくれるため、タイピング量が減りミスも防げます。
 
 ---
@@ -53,7 +51,7 @@ Generated Markdown: Modern_CPP_Guide_2026.md
 範囲ベース for ループ（`for(int num : v)`）は便利ですが、本来は「全部まわる」ルールです。「特定の場所だけ」を狙いたい時、現代C++では範囲ベースのまま綺麗に切り出すことができます。
 
 * **現代の書き方 (C++20):**
-    ```cpp
+```cpp
     #include <ranges>
 
     // 先頭の2個を「無視(drop)」して、そこから3個だけ「取得(take)」して回す
@@ -61,6 +59,7 @@ Generated Markdown: Modern_CPP_Guide_2026.md
         std::println("{}", num);
     }
     ```
+
 * **メリット:** 昔ながらの `for (int i = 2; i <= 5; ++i)` のような添え字管理に戻ることなく、安全かつスマートに部分ループが回せます。
 
 ---
@@ -70,17 +69,19 @@ Generated Markdown: Modern_CPP_Guide_2026.md
 マップ（`std::map`）やセット（`std::set`）の中に、特定のキーや値が含まれているかを調べる判定が直球になりました。
 
 * **C++17までの書き方:**
-    ```cpp
+```cpp
     if (myMap.find("target") != myMap.end()) {
         // 見つかった時の処理
     }
     ```
+
 * **現代の書き方 (C++20):**
-    ```cpp
+```cpp
     if (myMap.contains("target")) {
         // 見つかった時の処理
     }
     ```
+
 * **メリット:** 「最後まで探しても無かったら…」という回りくどいコードが消え、直感的に読めるようになります。
 
 ---
@@ -90,7 +91,7 @@ Generated Markdown: Modern_CPP_Guide_2026.md
 「名前の配列」と「点数の配列」のように、2つのコンテナを同時に並行して範囲ベース for ループにかけたい場合に重宝します。
 
 * **現代の書き方 (C++23):**
-    ```cpp
+```cpp
     #include <ranges>
     #include <vector>
     #include <print>
@@ -103,6 +104,7 @@ Generated Markdown: Modern_CPP_Guide_2026.md
         std::println("{}さんの点数は{}点", name, score);
     }
     ```
+
 * **メリット:** インデックス `i` を使って `names[i]`, `scores[i]` と書く手間から解放されます。
 
 ---
@@ -119,11 +121,3 @@ Generated Markdown: Modern_CPP_Guide_2026.md
 | インデックスによる部分ループ | `views::drop` / `views::take` | 範囲ベースforループのまま柔軟に制御 |
 
 これらはすべて外部ライブラリではなく、C++の**標準ライブラリ（コンパイラ内部）**に組み込まれています。コンパイラ設定で `C++20` や `C++23` を有効にするだけで、今すぐ利用可能です！
-"""
-
-# Save Markdown file
-md_filename = "Modern_CPP_Guide_2026.md"
-with open(md_filename, "w", encoding="utf-8") as f:
-    f.write(md_content)
-
-print(f"Generated Markdown: {md_filename}")
