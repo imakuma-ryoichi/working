@@ -1,1 +1,1 @@
-powershell vim系統使えないんで移行しました
+powershell vim系統使えないんで移行しました(privateにして)
