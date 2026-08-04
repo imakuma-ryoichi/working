@@ -27,9 +27,11 @@
 - NTP (123/UDP/時刻同期)
 - IMAP (143/TCP/メール受信)
 - POP3 (110/TCP/メール受信)
-- SMTP (25/TCP//メール送信)
+- SMTP (25/TCP/UDP/メール送信)
 
 ### TCP/UDPの違い
+
+
 
 ####  TCP
 
